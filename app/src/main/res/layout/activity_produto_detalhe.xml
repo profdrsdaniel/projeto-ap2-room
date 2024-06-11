@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="product"
+            type="br.com.ulbra.exemplorecycler.data.Product" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ProdutoDetalheActivity">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgProduct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:loadImg="@{product.urlImage}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <View
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:alpha="0.7"
+            android:background="@drawable/shape_rounded_corner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:text="@{product.name}"
+            app:layout_constraintEnd_toEndOf="@id/card"
+            app:layout_constraintStart_toStartOf="@id/card"
+            app:layout_constraintTop_toTopOf="@id/card"
+            tools:text="Produto" />
+
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:text="@{product.price}"
+            app:layout_constraintEnd_toEndOf="@id/card"
+            app:layout_constraintStart_toStartOf="@id/card"
+            app:layout_constraintTop_toBottomOf="@id/tvProductName"
+            tools:text="R$ 250,00" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
