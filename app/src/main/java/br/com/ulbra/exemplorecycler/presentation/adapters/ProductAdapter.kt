@@ -43,7 +43,7 @@ class ProductAdapter(
         holder.bind(list[position])
     }
 
-    inner class ViewHolder(view: ProductItemBinding) : RecyclerView.ViewHolder(view.root) {
+    inner class ViewHolder(private val binding: ProductItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
             binding.product = product
 
